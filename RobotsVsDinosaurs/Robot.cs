@@ -13,13 +13,15 @@ namespace RobotsVsDinosaurs
         public Random power = new Random();
         public Weapon weapon;
         public int powerLevel;
+        public int attackPower;
 
-        public Robot(string name)
+        public Robot(string name, int health, int i, int j)
         {
             this.name = name;
-            health = 100;
+            this.health = health;
             weapon = new Weapon();
-            powerLevel = power.Next(1, 10);            
+            powerLevel = power.Next(i, j);
+            attackPower = powerLevel * weapon.weaponDamage;
         }
     }
 }

@@ -8,15 +8,18 @@ namespace RobotsVsDinosaurs
 {
     class Fleet
     {
-        public Robot robot1;
-        public Robot robot2;
-        public Robot robot3;
-
+        public Robot jarvis;
+        public Robot roboCop;
+        public Robot cortana;
+        public List<Robot> robotList = new List<Robot>();
         public Fleet()
         {
-            robot1 = new Robot("Robot 1");
-            robot2 = new Robot("Robot 2");
-            robot3 = new Robot("Robot 3");
+            jarvis= new Robot("Jarvis", 125 , 2, 5);
+            roboCop = new Robot("RoboCop", 100, 4, 7);
+            cortana = new Robot("Cortana", 75, 6, 9);
+            robotList.Add(jarvis);
+            robotList.Add(roboCop);
+            robotList.Add(cortana);
         }
 
     }

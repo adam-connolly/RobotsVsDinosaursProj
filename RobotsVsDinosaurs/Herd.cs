@@ -8,26 +8,23 @@ namespace RobotsVsDinosaurs
 {
     class Herd
     {
-        public Dinosaur dino1;
-        public Dinosaur dino2;
-        public Dinosaur dino3;
+        public Dinosaur trex;
+        public Dinosaur pterodactyl;
+        public Dinosaur velociraptor;
         public List<Dinosaur> dinoList = new List<Dinosaur>();
 
         public Herd()
         {
-            dino1 = new Dinosaur("Velociraptor", 75, 8);
-            dino2 = new Dinosaur("T-Rex", 125, 3);
-            dino3 = new Dinosaur("Pterodactyl", 100, 5);
-            dinoList.Add(dino1);
-            dinoList.Add(dino2);
-            dinoList.Add(dino3);
+            trex = new Dinosaur("T-Rex", 125, 3, 2, 5);
+            pterodactyl = new Dinosaur("Pterodactyl", 100, 5, 4, 7);
+            velociraptor = new Dinosaur("Velociraptor", 75, 8, 6, 9);           
+            dinoList.Add(trex);
+            dinoList.Add(pterodactyl);
+            dinoList.Add(velociraptor);
         }
         //public void DisplayHerd()
         //{
-        //    foreach(Dinosaur dino in dinoList)
-        //    {
-        //        Console.WriteLine(dino.DisplayStats(dino));
-        //    }
+            
 
         //}
     }

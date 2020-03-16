@@ -12,14 +12,16 @@ namespace RobotsVsDinosaurs
         public int health;
         public int energy;
         public Random power = new Random();
+        public int attack;
         public int attackPower;
 
-        public Dinosaur(string type, int health, int energy)
+        public Dinosaur(string type, int health, int energy, int i, int j)
         {
             this.type = type;
             this.health = health;
             this.energy = energy;
-            attackPower = power.Next(2,5);
+            attack = power.Next(i,j);
+            attackPower = attack * 4;
         }
 
         //public void DisplayStats(Dinosaur dino)
@@ -28,6 +30,6 @@ namespace RobotsVsDinosaurs
         //    Console.WriteLine(health);
         //    Console.WriteLine(energy);
         //    Console.WriteLine(attackPower);
-        }
+        //}
     }
 }
