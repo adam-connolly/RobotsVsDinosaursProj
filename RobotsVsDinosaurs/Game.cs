@@ -31,7 +31,7 @@ namespace RobotsVsDinosaurs
                     battlefield.DisplayCombatants();
                     Console.WriteLine("Battle START");
                     battlefield.AttackFleet(battlefield.ChooseDinoAttacker());
-                    //battlefield.AttackHerd(battlefield.ChooseRobotAttacker());
+                    battlefield.AttackHerd(battlefield.ChooseRobotAttacker());
                     continue;
                 }
             }
