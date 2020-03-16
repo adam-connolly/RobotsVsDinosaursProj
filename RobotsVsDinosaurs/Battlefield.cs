@@ -20,20 +20,23 @@ namespace RobotsVsDinosaurs
 
         public void DisplayCombatants()
         {
+            Console.WriteLine("The Armies");
             herd.DisplayHerd();
             fleet.DisplayFleet();            
         }
 
         public Robot ChooseRobotAttacker()
         {
-            Console.WriteLine("Choose who you want to attack with:\n1. Jarvis\n2. RoboCop\n3. Cortana");
+            fleet.DisplayFleet();
+            Console.WriteLine($"Choose who you want to attack with (type 1, 2, or 3):");
             int input = Convert.ToInt32(Console.ReadLine());
             robotAttacker = fleet.robotList[input - 1];
             return robotAttacker;
         }
         public Dinosaur ChooseDinoAttacker()
         {
-            Console.WriteLine("Choose who you want to attack with:\n1. T-Rex\n2. Pterodactyl\n3. Velociraptor");
+            herd.DisplayHerd();
+            Console.WriteLine($"Choose who you want to attack with (type 1, 2, or 3):");
             int input = Convert.ToInt32(Console.ReadLine());
             dinoAttacker = herd.dinoList[input - 1];
             return dinoAttacker;
@@ -41,7 +44,8 @@ namespace RobotsVsDinosaurs
 
         public void AttackFleet(Dinosaur dino)
         {
-            Console.WriteLine($"Choose an enemy to attack:\n1. Jarvis {fleet.jarvis.health} HP\n2. RoboCop {fleet.roboCop.health} HP\n3. Cortana {fleet.cortana.health} HP");
+            fleet.DisplayFleet();
+            Console.WriteLine($"Choose an enemy to attack (type 1, 2, or 3):");
             int input = Convert.ToInt32(Console.ReadLine());
             
             Robot robot = fleet.robotList[input - 1];
@@ -71,7 +75,8 @@ namespace RobotsVsDinosaurs
         }
         public void AttackHerd(Robot robot)
         {
-            Console.WriteLine($"Choose an enemy to attack:\n1. T-Rex {herd.trex.health} HP\n2. Pterodactyl {herd.pterodactyl.health} HP\n3. Velociraptor {herd.velociraptor.health} HP");
+            herd.DisplayHerd();
+            Console.WriteLine($"Choose an enemy to attack(type 1, 2, or 3):");
             int input = Convert.ToInt32(Console.ReadLine());
             Dinosaur dino = herd.dinoList[input - 1];
             if (fleet.robotList.Contains(robot))

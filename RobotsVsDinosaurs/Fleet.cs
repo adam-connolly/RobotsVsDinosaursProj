@@ -23,10 +23,12 @@ namespace RobotsVsDinosaurs
         }
         public void DisplayFleet()
         {
-            Console.WriteLine($"{jarvis.name}: {jarvis.health} health");
-            Console.WriteLine($"{roboCop.name}: {roboCop.health} health");
-            Console.WriteLine($"{cortana.name}: {cortana.health} health");
-            Console.ReadLine();
+            Console.WriteLine("Robot Fleet");
+            for (int i = 0; i < robotList.Count; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + robotList[i].name + " " + robotList[i].health + " HP, " + robotList[i].attackPower + " Attack Power\n");
+            }
+            
         }
     }
 }

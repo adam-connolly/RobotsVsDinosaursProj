@@ -15,7 +15,7 @@ namespace RobotsVsDinosaurs
 
         public Herd()
         {
-            trex = new Dinosaur("T-Rex", 125, 3, 2, 5);
+            trex = new Dinosaur("T-Rex", 125, 3, 50, 51);
             pterodactyl = new Dinosaur("Pterodactyl", 100, 5, 4, 7);
             velociraptor = new Dinosaur("Velociraptor", 75, 8, 6, 9);           
             dinoList.Add(trex);
@@ -24,10 +24,13 @@ namespace RobotsVsDinosaurs
         }
         public void DisplayHerd()
         {
-            Console.WriteLine($"{trex.type}: {trex.health} health");
-            Console.WriteLine($"{pterodactyl.type}: {pterodactyl.health} health");
-            Console.WriteLine($"{velociraptor.type}: {velociraptor.health} health");
-            Console.ReadLine();
+            Console.WriteLine("Dinosaur Herd");
+            for (int i = 0; i < dinoList.Count; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + dinoList[i].type + " " + dinoList[i].health + " HP, " + dinoList[i].attackPower + " Attack Power\n");
+
+            }
+            
         }
     }
 
