@@ -22,20 +22,54 @@ namespace RobotsVsDinosaurs
         //    Console.WriteLine(DisplayFleet);
         //}
 
-        public int AttackFleet(Dinosaur dino, Robot robot)
+        public void AttackFleet(Dinosaur dino, Robot robot)
         {
-            int newHealth = robot.health - dino.attackPower;
-            if(newHealth == 0)
+            if (herd.dinoList.Contains(dino))
             {
-                Console.WriteLine($"You have destroyed {robot.name}!");
-                robot.health = newHealth;
-                return robot.health;
+                int newHealth = robot.health - dino.attackPower;
+                if (newHealth <= 0)
+                {
+                    Console.WriteLine($"You have destroyed {robot.name}!");
+                    robot.health = newHealth;
+                    fleet.robotList.Remove(robot);
+                    
+                }
+                else
+                {
+                    Console.WriteLine($"{robot.name} has {newHealth} health remaining!");
+                    robot.health = newHealth;
+                   
+                }
             }
             else
             {
-                Console.WriteLine($"{robot.name} has {newHealth} health remaining!");
-                robot.health = newHealth;
-                return robot.health;
+                Console.WriteLine($"{dino.type} can't attack. {dino.type} is alraedy dead!");
+            }
+            
+        }
+        public void AttackHerd(Robot robot, Dinosaur dino)
+        {
+            if (fleet.robotList.Contains(robot))
+            {
+                int newHealth = dino.health - robot.attackPower;
+                if (newHealth <= 0)
+                {
+                    Console.WriteLine($"You have killed {dino.type}!");
+                    dino.health = newHealth;
+                    herd.dinoList.Remove(dino);
+                    
+                }
+                else
+                {
+                    Console.WriteLine($"{dino.type} has {newHealth} health remaining!");
+                    dino.health = newHealth;
+                    
+                }
+                
+            }
+            else
+            {
+                Console.WriteLine($"{robot.name} can't attack. {robot.name} is already destroyed!");
             }
         }
     }

@@ -17,6 +17,7 @@ namespace RobotsVsDinosaurs
         public void RunGame()
         {
             battlefield.AttackFleet(battlefield.herd.trex, battlefield.fleet.cortana);
+            battlefield.AttackHerd(battlefield.fleet.cortana, battlefield.herd.trex);
 
         }
 
