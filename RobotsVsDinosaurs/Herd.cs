@@ -15,7 +15,7 @@ namespace RobotsVsDinosaurs
 
         public Herd()
         {
-            trex = new Dinosaur("T-Rex", 125, 3, 22, 25);
+            trex = new Dinosaur("T-Rex", 125, 3, 2, 5);
             pterodactyl = new Dinosaur("Pterodactyl", 100, 5, 4, 7);
             velociraptor = new Dinosaur("Velociraptor", 75, 8, 6, 9);           
             dinoList.Add(trex);

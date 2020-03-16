@@ -26,14 +26,14 @@ namespace RobotsVsDinosaurs
 
         public Robot ChooseRobotAttacker()
         {
-            Console.WriteLine("Choose who you want to attack with:\n1. Jarvis\n2.RoboCop\n3.Cortana");
+            Console.WriteLine("Choose who you want to attack with:\n1. Jarvis\n2. RoboCop\n3. Cortana");
             int input = Convert.ToInt32(Console.ReadLine());
             robotAttacker = fleet.robotList[input - 1];
             return robotAttacker;
         }
         public Dinosaur ChooseDinoAttacker()
         {
-            Console.WriteLine("Choose who you want to attack with:\n1. T-Rex\n2.Pterodactyl\n3. Velociraptor");
+            Console.WriteLine("Choose who you want to attack with:\n1. T-Rex\n2. Pterodactyl\n3. Velociraptor");
             int input = Convert.ToInt32(Console.ReadLine());
             dinoAttacker = herd.dinoList[input - 1];
             return dinoAttacker;

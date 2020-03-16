@@ -16,15 +16,25 @@ namespace RobotsVsDinosaurs
         }
         public void RunGame()
         {
-            battlefield.DisplayCombatants();
-            battlefield.AttackFleet(battlefield.herd.trex);
-            battlefield.AttackHerd(battlefield.fleet.cortana);
+            do
+            {
+                battlefield.DisplayCombatants();
 
-            //while (battlefield.herd.dinoList.Count > 0 || battlefield.fleet.robotList.Count > 0)
-            //{
-
-            //}
-
+                if (battlefield.herd.dinoList.Count > 0 && battlefield.fleet.robotList.Count == 0)
+                {
+                    Console.WriteLine("Dinosaurs Win!!");
+                }
+                else if (battlefield.herd.dinoList.Count == 0 && battlefield.fleet.robotList.Count > 0)
+                {
+                    Console.WriteLine("Robots Win!!");
+                }
+                else
+                {
+                    battlefield.AttackFleet(battlefield.ChooseDinoAttacker());
+                    battlefield.AttackHerd(battlefield.ChooseRobotAttacker());
+                }
+            }
+            while (battlefield.herd.dinoList.Count > 0 && battlefield.fleet.robotList.Count > 0);
         }
 
     }
