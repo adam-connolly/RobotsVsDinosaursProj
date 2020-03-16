@@ -23,5 +23,12 @@ namespace RobotsVsDinosaurs
             powerLevel = power.Next(i, j);
             attackPower = powerLevel * weapon.weaponDamage;
         }
+        public void DisplayStats()
+        {
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Healt: {health}");
+            Console.WriteLine($"Attack Power: {attackPower}");
+            Console.WriteLine($"Weapon: {weapon}");
+        }
     }
 }

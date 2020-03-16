@@ -24,12 +24,12 @@ namespace RobotsVsDinosaurs
             attackPower = attack * 4;
         }
 
-        //public void DisplayStats(Dinosaur dino)
-        //{
-        //    Console.WriteLine(this.type);
-        //    Console.WriteLine(health);
-        //    Console.WriteLine(energy);
-        //    Console.WriteLine(attackPower);
-        //}
+        public void DisplayStats()
+        {
+            Console.WriteLine($"Type: {type}");
+            Console.WriteLine($"Health: {health}");
+            Console.WriteLine($"Energy: {energy}");
+            Console.WriteLine($"Attack Power: {attackPower}");
+        }
     }
 }

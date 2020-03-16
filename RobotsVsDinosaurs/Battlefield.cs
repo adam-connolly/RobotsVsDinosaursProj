@@ -10,20 +10,42 @@ namespace RobotsVsDinosaurs
     {
         public Herd herd;
         public Fleet fleet;
+        public Robot robotAttacker;
+        public Dinosaur dinoAttacker;
         public Battlefield()
         {
             herd = new Herd();
             fleet = new Fleet();
         }
 
-        //public void DisplayCombatants()
-        //{
-        //    Console.WriteLine(DisplayHerd);
-        //    Console.WriteLine(DisplayFleet);
-        //}
-
-        public void AttackFleet(Dinosaur dino, Robot robot)
+        public void DisplayCombatants()
         {
+            herd.DisplayHerd();
+            fleet.DisplayFleet();            
+        }
+
+        public Robot ChooseRobotAttacker()
+        {
+            Console.WriteLine("Choose who you want to attack with:\n1. Jarvis\n2.RoboCop\n3.Cortana");
+            int input = Convert.ToInt32(Console.ReadLine());
+            robotAttacker = fleet.robotList[input - 1];
+            return robotAttacker;
+        }
+        public Dinosaur ChooseDinoAttacker()
+        {
+            Console.WriteLine("Choose who you want to attack with:\n1. T-Rex\n2.Pterodactyl\n3. Velociraptor");
+            int input = Convert.ToInt32(Console.ReadLine());
+            dinoAttacker = herd.dinoList[input - 1];
+            return dinoAttacker;
+        }
+
+        public void AttackFleet(Dinosaur dino)
+        {
+            Console.WriteLine($"Choose an enemy to attack:\n1. Jarvis {fleet.jarvis.health} HP\n2. RoboCop {fleet.roboCop.health} HP\n3. Cortana {fleet.cortana.health} HP");
+            int input = Convert.ToInt32(Console.ReadLine());
+            
+            Robot robot = fleet.robotList[input - 1];
+            
             if (herd.dinoList.Contains(dino))
             {
                 int newHealth = robot.health - dino.attackPower;
@@ -47,8 +69,11 @@ namespace RobotsVsDinosaurs
             }
             
         }
-        public void AttackHerd(Robot robot, Dinosaur dino)
+        public void AttackHerd(Robot robot)
         {
+            Console.WriteLine($"Choose an enemy to attack:\n1. T-Rex {herd.trex.health} HP\n2. Pterodactyl {herd.pterodactyl.health} HP\n3. Velociraptor {herd.velociraptor.health} HP");
+            int input = Convert.ToInt32(Console.ReadLine());
+            Dinosaur dino = herd.dinoList[input - 1];
             if (fleet.robotList.Contains(robot))
             {
                 int newHealth = dino.health - robot.attackPower;

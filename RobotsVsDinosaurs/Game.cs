@@ -16,8 +16,14 @@ namespace RobotsVsDinosaurs
         }
         public void RunGame()
         {
-            battlefield.AttackFleet(battlefield.herd.trex, battlefield.fleet.cortana);
-            battlefield.AttackHerd(battlefield.fleet.cortana, battlefield.herd.trex);
+            battlefield.DisplayCombatants();
+            battlefield.AttackFleet(battlefield.herd.trex);
+            battlefield.AttackHerd(battlefield.fleet.cortana);
+
+            //while (battlefield.herd.dinoList.Count > 0 || battlefield.fleet.robotList.Count > 0)
+            //{
+
+            //}
 
         }
 

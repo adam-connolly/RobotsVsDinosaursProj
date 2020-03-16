@@ -21,6 +21,12 @@ namespace RobotsVsDinosaurs
             robotList.Add(roboCop);
             robotList.Add(cortana);
         }
-
+        public void DisplayFleet()
+        {
+            Console.WriteLine($"{jarvis.name}: {jarvis.health} health");
+            Console.WriteLine($"{roboCop.name}: {roboCop.health} health");
+            Console.WriteLine($"{cortana.name}: {cortana.health} health");
+            Console.ReadLine();
+        }
     }
 }

@@ -22,11 +22,13 @@ namespace RobotsVsDinosaurs
             dinoList.Add(pterodactyl);
             dinoList.Add(velociraptor);
         }
-        //public void DisplayHerd()
-        //{
-            
-
-        //}
+        public void DisplayHerd()
+        {
+            Console.WriteLine($"{trex.type}: {trex.health} health");
+            Console.WriteLine($"{pterodactyl.type}: {pterodactyl.health} health");
+            Console.WriteLine($"{velociraptor.type}: {velociraptor.health} health");
+            Console.ReadLine();
+        }
     }
 
 }
