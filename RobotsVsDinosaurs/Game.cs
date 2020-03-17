@@ -16,6 +16,7 @@ namespace RobotsVsDinosaurs
         }
         public void RunGame()
         {
+            Console.WriteLine("Battle START");
             do
             {                
                 if (battlefield.herd.dinoList.Count > 0 && battlefield.fleet.robotList.Count == 0)
@@ -29,7 +30,7 @@ namespace RobotsVsDinosaurs
                 else
                 {
                     battlefield.DisplayCombatants();
-                    Console.WriteLine("Battle START");
+                    Console.WriteLine("Round START");
                     battlefield.AttackFleet(battlefield.ChooseDinoAttacker());
                     battlefield.AttackHerd(battlefield.ChooseRobotAttacker());
                     continue;
